@@ -1,0 +1,14 @@
+{
+  "name": "semversionizer-parser",
+  "description": "A smaller simpler semver parser",
+  "version": "0.1.0",
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "benchmark": "*"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/spec.js",
+    "perf": "node test/perf.js"
+  }
+}
