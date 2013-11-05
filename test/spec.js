@@ -1,5 +1,5 @@
-var parse = require("../lib/semver");
-var spec  = require("../../semver-spec");
+var parse = require("../");
+var spec  = require("semver-spec");
 
 require("should");
 
