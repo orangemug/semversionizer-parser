@@ -6,9 +6,8 @@
     "semver-spec": "git://github.com/orangemug/semver-spec.git"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
-    "benchmark": "*"
+    "benchmark": "^1.0.0",
+    "mocha": "^2.0.1"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test/spec.js",

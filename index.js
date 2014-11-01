@@ -1,4 +1,5 @@
-var SEMVER_REGEXP = /^([0-9]+)\.([0-9]+)\.([0-9]+)(\-([0-9A-Za-z-.]+))?(\+([0-9A-Za-z-.]+))?$/;
+var STRICT_SEMVER_REGEXP = /^([0-9]+)\.([0-9]+)\.([0-9]+)(\-([0-9A-Za-z-.]+))?(\+([0-9A-Za-z-.]+))?$/;
+var LOOSE_SEMVER_REGEXP  = /^([0-9]+)(?:\.([0-9]+)(?:\.([0-9]+)(?:(\-([0-9A-Za-z-.]+))?(\+([0-9A-Za-z-.]+))?))?)?$/;
 
 var cast = require("./lib/cast");
 
@@ -12,8 +13,9 @@ function hasEmptys(arr) {
 }
 
 
-function parse(str) {
-  var p = str.match(SEMVER_REGEXP);
+function parse(str, loose) {
+  var re = loose ? LOOSE_SEMVER_REGEXP : STRICT_SEMVER_REGEXP;
+  var p = str.match(re);
   if(!p) {
     return null;
   }
