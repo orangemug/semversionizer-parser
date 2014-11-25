@@ -1,5 +1,5 @@
 var Benchmark = require('benchmark');
-var parse     = require('../lib/semver');
+var parse     = require('../');
 
 var suite = new Benchmark.Suite;
 
