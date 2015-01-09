@@ -1,7 +1,7 @@
 {
   "name": "semversionizer-parser",
   "description": "A smaller semver parser",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
     "semver-spec": "git://github.com/orangemug/semver-spec.git"
   },
