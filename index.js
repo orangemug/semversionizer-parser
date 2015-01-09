@@ -39,4 +39,55 @@ function parse(str, loose) {
   return out;
 }
 
-module.exports = parse;
+function unparse(obj, loose) {
+  var ret = "";
+  var isLoose;
+
+  // major
+  if(parseInt(obj.major,10) >= 0) {
+    ret = obj.major;
+  } else {
+    throw "major invalid";
+  }
+
+  // minor
+  if(parseInt(obj.minor,10) >= 0) {
+    ret += "."+obj.minor;
+  } else if(loose) {
+    isLoose = true;
+  } else {
+    throw "minor invalid";
+  }
+
+  // patch
+  if(parseInt(obj.patch,10) >= 0) {
+    if(isLoose) {
+      throw "patch without minor";
+    }
+    ret += "."+obj.patch;
+  } else if(loose) {
+    isLoose = true;
+  } else {
+    throw "patch invalid";
+  }
+
+  // prerelease
+  if(obj.prerelease && obj.prerelease.length > 0) {
+    if(isLoose) throw "Loose regex can't have prerelease";
+    ret += "-"+obj.prerelease;
+  }
+
+  // patch
+  if(obj.build && obj.build.length > 0) {
+    if(isLoose) throw "Loose regex can't have build";
+    ret += "+"+obj.build;
+  }
+
+  return ret;
+}
+
+module.exports = {
+  parse: parse,
+  unparse: unparse
+};
+
