@@ -17,7 +17,7 @@ function parse(str, loose) {
   var re = loose ? LOOSE_SEMVER_REGEXP : STRICT_SEMVER_REGEXP;
   var p = str.match(re);
   if(!p) {
-    return null;
+    throw "Invalid regexp";
   }
 
   var out = {
@@ -29,11 +29,12 @@ function parse(str, loose) {
   };
 
   // Check for emptys
-  if(
-       out.prerelease !== undefined && hasEmptys(out.prerelease)
-    && out.build      !== undefined && hasEmptys(out.build)
-  ) {
-    return null;
+  if(out.prerelease !== undefined && hasEmptys(out.prerelease)) {
+    throw "Invalid prerelease";
+  }
+
+  if(out.build !== undefined && hasEmptys(out.build)) {
+    throw "Invalid build";
   }
 
   return out;
