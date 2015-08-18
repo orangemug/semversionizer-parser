@@ -37,5 +37,4 @@ An invalid semver in either `parse` or `unparse` will throw an error (since v0.3
 
 
 ## License
-MIT
-
+[MIT](LICENSE)
