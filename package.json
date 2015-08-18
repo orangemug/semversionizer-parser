@@ -9,6 +9,12 @@
     "type": "git",
     "url": "git://github.com/orangemug/semversionizer-parser.git"
   },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "config": {
     "blanket": {
       "pattern": [
