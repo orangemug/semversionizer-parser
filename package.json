@@ -5,6 +5,10 @@
   "dependencies": {
     "semver-spec": "git://github.com/orangemug/semver-spec.git"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/orangemug/semversionizer-parser.git"
+  },
   "config": {
     "blanket": {
       "pattern": [
