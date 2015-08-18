@@ -1,6 +1,11 @@
 # semverionizer-parser
 A smaller simpler [semver](http://semver.org/) parser.
 
+[![Build Status](https://travis-ci.org/orangemug/semverionizer-parser.svg?branch=master)](https://travis-ci.org/orangemug/semverionizer-parser) 
+[![Dependency Status](https://david-dm.org/orangemug/semverionizer-parser.svg)](https://david-dm.org/orangemug/semverionizer-parser)
+[![Dev Dependency Status](https://david-dm.org/orangemug/semverionizer-parser/dev-status.svg)](https://david-dm.org/orangemug/semverionizer-parser#info=devDependencies)
+
+
 ## Usage
 Parse using the following
 
